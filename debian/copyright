@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: acpi-openrc
-Source: https://github.com/Nitrux/acpi-openrc.git
+Upstream-Name: sudo-openrc
+Source: https://github.com/Nitrux/sudo-openrc.git
 
 Files: *
 Copyright: 2022 Uri Herrera <uri_herrera@nxos.org>
