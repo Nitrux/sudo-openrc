@@ -7,6 +7,7 @@ description="Initializes the sudo timestamp directory"
 depend() {
 	# This should run after the basic filesystems are mounted.
 	need localmount
+	provide sudo
 }
 
 start() {

@@ -1,3 +1,9 @@
+sudo-openrc (0.0.2)  nitrux; urgency=medium
+
+  * Fix provides.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Fri, 18 Jul 2025 05:20:00 -0500
+
 sudo-openrc (0.0.1)  nitrux; urgency=medium
 
   * Create package.
