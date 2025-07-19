@@ -3,34 +3,19 @@
 description="Initializes the sudo timestamp directory"
 
 depend() {
-	# This should run after the basic filesystems are mounted.
 	need localmount
 	provide sudo
 }
 
 start() {
-	# Don't run if we are under systemd.
-	if [ -d /run/systemd/system ]; then
-		return 0
-	fi
-
 	ebegin "Initializing sudo timestamp directory"
 
-	# Use checkpath to ensure the directories exist with correct permissions.
 	checkpath -d -m 0711 -o root:root /run/sudo
 	checkpath -d -m 0700 -o root:root /run/sudo/ts
 
-	# Invalidate any existing timestamp tickets from a previous session
-	# by setting their modification time to the epoch.
 	find /run/sudo/ts -type f -exec touch -d @0 '{}' +
 
-	# Restore SELinux context if possible.
-	[ -x /sbin/restorecon ] && /sbin/restorecon /run/sudo /run/sudo/ts
+	[ -x /usr/sbin/restorecon ] && /usr/sbin/restorecon /run/sudo /run/sudo/ts
 
 	eend 0
-}
-
-stop() {
-	# This is a one-shot service, there is nothing to stop.
-	return 0
 }

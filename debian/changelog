@@ -1,3 +1,9 @@
+sudo-openrc (0.0.3)  nitrux; urgency=medium
+
+  * Cleanup service.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sat, 19 Jul 2025 02:17:00 -0500
+
 sudo-openrc (0.0.2)  nitrux; urgency=medium
 
   * Fix provides.
